@@ -1,0 +1,44 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #1a1a2e;
+  color: white;
+  font-family:'Pokemon Hollow';
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 220px);
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  width: 220px;
+  cursor: pointer;
+}
+
+.card__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.is_clicked {
+  z-index: 999;
+  position: relative;
+}
