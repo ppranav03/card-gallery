@@ -5,7 +5,7 @@
 body {
   background: #1a1a2e;
   color: white;
-  font-family:'Pokemon Hollow';
+  font-family: 'Pokemon Hollow';
   padding: 2rem;
 }
 
@@ -24,21 +24,40 @@ h1 {
   padding: 10px;
 }
 
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+}
+
 .card {
   position: relative;
   z-index: 1;
   transition: transform 0.3s ease;
   width: 220px;
   cursor: pointer;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    aspect-ratio: 5 / 7;
+  }
 }
 
 .card__img {
   width: 100%;
   height: auto;
   display: block;
+  -webkit-user-drag: none;
+  pointer-events: none;
 }
 
-.is_clicked {
+.card.is_clicked {
   z-index: 999;
-  position: relative;
 }
