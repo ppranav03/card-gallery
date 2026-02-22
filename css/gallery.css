@@ -35,12 +35,13 @@ h1 {
 .card {
   position: relative;
   z-index: 1;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
   width: 220px;
   cursor: pointer;
   touch-action: manipulation;
   -webkit-user-select: none;
   user-select: none;
+
 }
 
 @media (max-width: 768px) {
@@ -58,6 +59,24 @@ h1 {
   pointer-events: none;
 }
 
+
+/* @keyframes card_click {
+  from {transform: translate(var(--centerX), var(--centerY)) scale(2) rotateY('0deg');}
+  to {transform: translate(var(--centerX), var(--centerY)) scale(2) rotateY('360deg');}
+} */
+
 .card.is_clicked {
   z-index: 999;
+}
+
+.card__glare {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--posx) var(--posy),
+    rgba(255, 255, 255, 0.4),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
