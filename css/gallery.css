@@ -16,7 +16,7 @@ h1 {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, 220px);
+  grid-template-columns: repeat(4, 220px);
   gap: 2rem;
   justify-content: center;
   max-width: 1200px;
