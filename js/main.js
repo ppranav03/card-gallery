@@ -1,3 +1,33 @@
+import dataJson from "../data/data.json" with {type: 'json'};
+
+console.log(typeof(dataJson));
+const galleryElement = document.querySelector('.gallery');
+
+dataJson.forEach(element => {
+  console.log(element);
+
+  // Creating overall card
+  const cardElement = document.createElement("div");
+  cardElement.className = "card";
+
+  // Creating glare element
+  const glareEl = document.createElement("div");
+  glareEl.className = "card__glare";
+
+  // Creating image element
+  const imgEl = document.createElement("img");
+  imgEl.className = "card__img";
+  imgEl.src = `${element.src}`;
+
+  cardElement.appendChild(glareEl);
+  cardElement.appendChild(imgEl);
+
+  galleryElement.appendChild(cardElement);
+
+});
+
+
+
 const cards = document.querySelectorAll('.card');
 const width = window.innerWidth;
 const height = window.innerHeight;
